@@ -19,8 +19,9 @@ development:
   encoding: unicode
   database: reservester_development
   pool: 5
-  username: reservester
-  password:
+  host: localhost
+  username: justin
+  password: 'hunter2' 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,13 +49,12 @@ test:
   encoding: unicode
   database: reservester_test
   pool: 5
-  username: reservester
-  password:
+  host: localhost
+  username: justin
+  password: 'hunter2'
 
 production:
   adapter: postgresql
   encoding: unicode
   database: reservester_production
   pool: 5
-  username: reservester
-  password:
