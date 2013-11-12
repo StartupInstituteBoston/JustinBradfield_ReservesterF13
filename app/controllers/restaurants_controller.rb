@@ -12,9 +12,8 @@ class RestaurantsController < ApplicationController
     
 # These methods need to be made far more secure
 
-    # Tears down the form, and returns the success
-    # of the creation of a new restaurant
-
+    #sets instance variable and responds with
+    # a form to create the new restaurant
     def new
          @restaurant=Restaurant.new()
     end
@@ -26,7 +25,8 @@ class RestaurantsController < ApplicationController
         if @restaurant.save
         	redirect_to @restaurant
         else
-        	flash[:notice]="there was an error creating your restaurant"
+        	
+            redirect_to :back , notice: "Your restaurant failed to be created"
    		end
     end
 
@@ -37,28 +37,26 @@ class RestaurantsController < ApplicationController
     end
 
 
-
-     # Sends JSON with a partial to edit
+    # sets the instance variable restaurant 
+    # and returns the edit form
     def edit
-    	@restaurant=Restaurant.find restaurant_params[:id]
-
+    	@restaurant=Restaurant.find params[:id]
     end
-
-    # tears down edit partial and responds with success
-    # of the update of the erstaurant
+    #updates the targeted restaurant then redirects
+    # to that restaurants page
     def update
-    	if @restaurant.update_attributes post_params
-    		redirect_to :back
+
+    	if @restaurant.update_attributes restaurant_params
+    		redirect_to @restaurant
     	else
     		flash[:notice]="there was an error updating";
     	end
     end
 
-    # sends a JSON or java script responce verifying 
-    # the deletion of the Restaurant
+   #destroys the object then redirects to home
     def destroy
-    	if Restaurant.destroy(restaurant_params[:id])
-    		flash[:notice]="Restaurant deleted successfully"
+    	if Restaurant.destroy params[:id]
+    		redirect_to root_url , notice: "Restaurant deleted successfully"
     	else
     		flash[:notice]="Error deleting your restaurant"
    		end

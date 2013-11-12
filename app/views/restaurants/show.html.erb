@@ -1,31 +1,34 @@
-<div class="hero-unit">
+<div class="hero-unit drop span6">
 	<h1>
 		<%=@restaurant.name%>
 	<h1>
-	<p>
+	<p class="makesmall" >
 		a picture should end up going here
-	<p>
-
-	<div class= "well">
+	</p>
+</div>
+	<div class= "well center span 6 info">
 		<p id="description">
 			<%= @restaurant.description %>
 		</p>
-		<ul id = "address">
+		<ul id = "address center" class = " span6">
 			<li id ="street">
 				<%= @restaurant.street%>
 			</li>
-			<li id='city'>
-				<%=@restaurant.city%>
-			</li>
-			<li id ="state">
+			<li id='cityandstate'>
+				<%=@restaurant.city%> , 
+
 				<%=@restaurant.state%>
 			</li>
 			<li id ="zip">
-				<%= @restaurant.zip
+				<%= @restaurant.zip%>
 			</li>
-		</p>
+			<li>
+				<%=link_to "edit",edit_restaurant_path(@restaurant), :class => 'btn btn-primary btn-large'%>
 
-	<div>
+				<%=link_to "delete",@restaurant,:method => 'delete', :class => 'btn btn-primary btn-large'%>
+			</li>
+		</ul>
+	</div>
 
 
 </div>

@@ -42,6 +42,7 @@ group :test do
     gem 'rspec-rails'
     gem 'factory_girl_rails'
     gem 'database_cleaner'
+    gem 'simplecov'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,0 +1,39 @@
+.info {
+	margin: 0,auto;
+
+}
+ul li {
+	hieght:40px;
+	list-style: none;
+}
+.makesmall{
+	font-size: 12pt;
+}
+.drop{
+	margin-top: 30px;
+}
+.restaurant{
+	overflow: hidden;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.restaurant a{
+	list-style: none;
+	color: black;
+	line-height: 40px;
+}
+.restaurant .title{
+	font-size: 20px;
+}
+.restaurant li{
+	display: inline-block;
+	float: left;
+}
+.restaurant li ul li{
+	display: list-item;
+	float: none;
+}
+.restaurant .phone{
+	line-height: 40px;
+}

@@ -1,0 +1,38 @@
+<h1> RESTAURANTS</h1>
+	<div class='span7'>
+		<%= link_to "new restaurant", new_restaurant_path%>
+	</div>
+	<% @restaurants.each do |restaurant| %>
+
+		<ul class="well restaurant span8">
+			<li class="title">
+			<%=link_to restaurant.name, restaurant%>
+			</li>
+			<li class = "restaurantPicture">
+				an image will be in here eventually
+			</li>
+			<li class = "well restaurantDescription">
+				<%=	restaurant.description %>
+			</li>
+			<li class ="restaurantAddress">
+				<ul class="address">
+					<li class="street">
+					<%=	restaurant.street %>
+					</li>
+					<li class="city">
+					<%=	restaurant.city %>
+					</li>
+					<li class="state">
+					<%=	restaurant.state %>
+					</li>
+					<li class="zip">
+					<%=	restaurant.zip %>
+					</li>
+				</ul>
+			</li>
+			<li class ="restaurantPhone">
+				<%=	restaurant.phone %>
+			</li>
+		</ul>
+	<%end%>
+

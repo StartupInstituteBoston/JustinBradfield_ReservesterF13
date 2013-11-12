@@ -7,6 +7,6 @@ FactoryGirl.define do
         city 'Boston'
         state 'Iowa'
         zip '02156'
-        
+        phone '123-867-5309'
     end
 end
