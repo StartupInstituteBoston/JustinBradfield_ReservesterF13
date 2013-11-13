@@ -45,11 +45,11 @@ class RestaurantsController < ApplicationController
     #updates the targeted restaurant then redirects
     # to that restaurants page
     def update
-
+        @restaurant=Restaurant.find params[:id]
     	if @restaurant.update_attributes restaurant_params
     		redirect_to @restaurant
     	else
-    		flash[:notice]="there was an error updating";
+            redirect_to :back , notice: "Make sure you have entered valid information"
     	end
     end
 
@@ -57,8 +57,10 @@ class RestaurantsController < ApplicationController
     def destroy
     	if Restaurant.destroy params[:id]
     		redirect_to root_url , notice: "Restaurant deleted successfully"
-    	else
-    		flash[:notice]="Error deleting your restaurant"
+    	#I can't think of how these will happen
+        # or how to test them
+        # else
+     #        redirect_to :back , notice: "Could not delete at this moment"
    		end
     end 
 
